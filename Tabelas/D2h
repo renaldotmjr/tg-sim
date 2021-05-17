@@ -1,0 +1,17 @@
+# Character table for group D2h
+#
+Classe 8
+#
+nelet     1      1        1        1        1      1          1          1
+#
+elem      E      C2(z)    C2(y)    C2(x)    i      Sig(xy)    Sig(xz)    Sig(yz)
+Ag        1      1        1        1        1      1          1          1
+B1g       1      1       -1       -1        1      1         -1         -1
+B2g       1     -1        1       -1        1     -1          1         -1
+B3g       1     -1       -1        1        1     -1         -1          1
+Au        1      1        1        1       -1     -1         -1         -1
+B1u       1      1       -1       -1       -1     -1          1          1
+B2u       1     -1        1       -1       -1      1         -1          1
+B3u       1     -1       -1        1       -1      1          1         -1 
+#
+Teta      0     180      180      180       0     180        180        180

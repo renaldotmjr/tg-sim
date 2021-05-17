@@ -1,0 +1,15 @@
+# Character table for group C4h 
+#
+Classe 8
+#
+nelet   1    1        1     1       1    1       1        1
+#
+elem    E    C4(z)    C2    C4^3    i    S4^3    Sig_h    S4
+Ag      1    1        1     1       1    1       1        1
+Bg      1   -1        1    -1       1   -1       1       -1
+Eg      2    0       -2     0       2    0      -2        0
+Au      1    1        1     1      -1   -1      -1       -1
+Bu      1   -1        1    -1      -1    1      -1        1
+Eu      2    0       -2     0      -2    0       2        0
+#
+Teta    0   90       180   270      0    90     180      270

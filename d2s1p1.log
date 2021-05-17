@@ -1,0 +1,881 @@
+#########################################################################
+##                                                                     ##
+##         TgSim Software                                              ##
+##         A Computational Tool for Electronic Spectroscopy            ##
+##                                                           2015      ##
+#########################################################################
+##                                                                     ##
+##     Universidade Federal de Pernambuco - UFPE                       ##
+##          Departamento de Quimica Fundamental - DQF                  ##
+##                                                                     ##
+##     Universidade Federal Rural de Pernambuco - UFRPE                ##
+##          Unidade Academica de Serra Talhada - UAST                  ##
+##                                                                     ##
+##               http://dqfnet.ufpe.br/lqtc/tgsim/                     ##
+##                                                                     ##
+## -- PTE module --                                                    ##
+## Tg-Sim program aims the obtention of spectroscopic terms of a given ##
+## electronic configuration. The software constructs all microstates   ##
+## avoiding the violation of Pauli exclusion principle and using the   ##
+## aufbau principle.                                                   ##
+##                                                                     ##
+## By using a semimicrostates approach for the type of orbital (s, p,  ##
+## d, f,...) and the number of electrons, Tg-Sim returns the spectros- ##
+## copic terms including spin-orbit coupling and energetically ordered ##
+## by the Hund's rules.                                                ##
+##                                                                     ##
+## -- RTE module --                                                    ##
+## The package also computes the reducible representation of a chosen  ##
+## spectroscopic term in a symmetry field (symmetry point group), in a ##
+## linear combination of the irreducible ones.                         ##
+##                                                                     ##
+#########################################################################
+##  Renaldo T. Moura Jr.  | Eduardo C. Aguiar |  Julio C. S. da Silva  ##
+#########################################################################
+
+
+
+
+The electronic configuration d^2 has 45 microstates
+
+  *** Spin Factoring Like microstates ***  
+     ml (Spin UP)       ml (Spin Down)  
+[___ ___ ___ ___ ___|___ ___ ___ ___ ___]
+-------------------------------------------
+  2   1   0  -1  -2   2   1   0  -1  -2 
+
+  1   1   0   0   0   0   0   0   0   0      Ms =   2;    Ml =   3
+  1   0   1   0   0   0   0   0   0   0      Ms =   2;    Ml =   2
+  1   0   0   1   0   0   0   0   0   0      Ms =   2;    Ml =   1
+  1   0   0   0   1   0   0   0   0   0      Ms =   2;    Ml =   0
+  1   0   0   0   0   1   0   0   0   0      Ms =   0;    Ml =   4
+  1   0   0   0   0   0   1   0   0   0      Ms =   0;    Ml =   3
+  1   0   0   0   0   0   0   1   0   0      Ms =   0;    Ml =   2
+  1   0   0   0   0   0   0   0   1   0      Ms =   0;    Ml =   1
+  1   0   0   0   0   0   0   0   0   1      Ms =   0;    Ml =   0
+  0   1   1   0   0   0   0   0   0   0      Ms =   2;    Ml =   1
+  0   1   0   1   0   0   0   0   0   0      Ms =   2;    Ml =   0
+  0   1   0   0   1   0   0   0   0   0      Ms =   2;    Ml =  -1
+  0   1   0   0   0   1   0   0   0   0      Ms =   0;    Ml =   3
+  0   1   0   0   0   0   1   0   0   0      Ms =   0;    Ml =   2
+  0   1   0   0   0   0   0   1   0   0      Ms =   0;    Ml =   1
+  0   1   0   0   0   0   0   0   1   0      Ms =   0;    Ml =   0
+  0   1   0   0   0   0   0   0   0   1      Ms =   0;    Ml =  -1
+  0   0   1   1   0   0   0   0   0   0      Ms =   2;    Ml =  -1
+  0   0   1   0   1   0   0   0   0   0      Ms =   2;    Ml =  -2
+  0   0   1   0   0   1   0   0   0   0      Ms =   0;    Ml =   2
+  0   0   1   0   0   0   1   0   0   0      Ms =   0;    Ml =   1
+  0   0   1   0   0   0   0   1   0   0      Ms =   0;    Ml =   0
+  0   0   1   0   0   0   0   0   1   0      Ms =   0;    Ml =  -1
+  0   0   1   0   0   0   0   0   0   1      Ms =   0;    Ml =  -2
+  0   0   0   1   1   0   0   0   0   0      Ms =   2;    Ml =  -3
+  0   0   0   1   0   1   0   0   0   0      Ms =   0;    Ml =   1
+  0   0   0   1   0   0   1   0   0   0      Ms =   0;    Ml =   0
+  0   0   0   1   0   0   0   1   0   0      Ms =   0;    Ml =  -1
+  0   0   0   1   0   0   0   0   1   0      Ms =   0;    Ml =  -2
+  0   0   0   1   0   0   0   0   0   1      Ms =   0;    Ml =  -3
+  0   0   0   0   1   1   0   0   0   0      Ms =   0;    Ml =   0
+  0   0   0   0   1   0   1   0   0   0      Ms =   0;    Ml =  -1
+  0   0   0   0   1   0   0   1   0   0      Ms =   0;    Ml =  -2
+  0   0   0   0   1   0   0   0   1   0      Ms =   0;    Ml =  -3
+  0   0   0   0   1   0   0   0   0   1      Ms =   0;    Ml =  -4
+  0   0   0   0   0   1   1   0   0   0      Ms =  -2;    Ml =   3
+  0   0   0   0   0   1   0   1   0   0      Ms =  -2;    Ml =   2
+  0   0   0   0   0   1   0   0   1   0      Ms =  -2;    Ml =   1
+  0   0   0   0   0   1   0   0   0   1      Ms =  -2;    Ml =   0
+  0   0   0   0   0   0   1   1   0   0      Ms =  -2;    Ml =   1
+  0   0   0   0   0   0   1   0   1   0      Ms =  -2;    Ml =   0
+  0   0   0   0   0   0   1   0   0   1      Ms =  -2;    Ml =  -1
+  0   0   0   0   0   0   0   1   1   0      Ms =  -2;    Ml =  -1
+  0   0   0   0   0   0   0   1   0   1      Ms =  -2;    Ml =  -2
+  0   0   0   0   0   0   0   0   1   1      Ms =  -2;    Ml =  -3
+
+
+The electronic configuration s^1 has 2 microstates
+
+  *** Spin Factoring Like microstates ***  
+[__ __ __]Ml(spinUP) [__ __ __]Ml(spinDOWN)
+-------------------------------------------
+  0   0 
+
+  1   0      Ms =   1;    Ml =   0
+  0   1      Ms =  -1;    Ml =   0
+
+
+The electronic configuration p^1 has 6 microstates
+
+  *** Spin Factoring Like microstates ***  
+[__ __ __]Ml(spinUP) [__ __ __]Ml(spinDOWN)
+-------------------------------------------
+  1   0  -1   1   0  -1 
+
+  1   0   0   0   0   0      Ms =   1;    Ml =   1
+  0   1   0   0   0   0      Ms =   1;    Ml =   0
+  0   0   1   0   0   0      Ms =   1;    Ml =  -1
+  0   0   0   1   0   0      Ms =  -1;    Ml =   1
+  0   0   0   0   1   0      Ms =  -1;    Ml =   0
+  0   0   0   0   0   1      Ms =  -1;    Ml =  -1
+
+
+The electronic configuration d2s1p1 has 540.0 microstates
+
+-> Grouping microstates into the anwser matrix... (in terms of L and S) 
+
+
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 5	        0	        1	        2	
+ML: 4	        1	        5	        8	
+ML: 3	        2	       10	       16	
+ML: 2	        4	       17	       26	
+ML: 1	        5	       22	       34	
+ML: 0	        6	       25	       38	
+
+Sum of all matrix elements: 222
+
+
+
+-> Interpreting the Anwser Matrix to compute the Spectroscopic Terms (Terms Symbols)
+
+   *** Printing the Spectroscopic Terms of the electronic configuration ***
+
+
+
+-> Spectroscopic Term found:
+L=5, S=1 --- 3H  (M.E.= 33)
+
+-> Eliminating the 3H microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 5	        0	        0	        1	
+ML: 4	        1	        4	        7	
+ML: 3	        2	        9	       15	
+ML: 2	        4	       16	       25	
+ML: 1	        5	       21	       33	
+ML: 0	        6	       24	       37	
+
+Sum of all matrix elements: 210
+
+
+-> Spectroscopic Term found:
+L=5, S=0 --- 1H  (M.E.= 11)
+
+-> Eliminating the 1H microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 4	        1	        4	        6	
+ML: 3	        2	        9	       14	
+ML: 2	        4	       16	       24	
+ML: 1	        5	       21	       32	
+ML: 0	        6	       24	       36	
+
+Sum of all matrix elements: 204
+
+
+-> Spectroscopic Term found:
+L=4, S=2 --- 5G  (M.E.= 45)
+
+-> Eliminating the 5G microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 4	        0	        3	        5	
+ML: 3	        1	        8	       13	
+ML: 2	        3	       15	       23	
+ML: 1	        4	       20	       31	
+ML: 0	        5	       23	       35	
+
+Sum of all matrix elements: 189
+
+
+-> Spectroscopic Term found:
+L=4, S=1 --- 3G  (M.E.= 27)
+
+-> Eliminating the 3G microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 4	        0	        2	        4	
+ML: 3	        1	        7	       12	
+ML: 2	        3	       14	       22	
+ML: 1	        4	       19	       30	
+ML: 0	        5	       22	       34	
+
+Sum of all matrix elements: 179
+
+
+-> Spectroscopic Term found:
+L=4, S=1 --- 3G  (M.E.= 27)
+
+-> Eliminating the 3G microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 4	        0	        1	        3	
+ML: 3	        1	        6	       11	
+ML: 2	        3	       13	       21	
+ML: 1	        4	       18	       29	
+ML: 0	        5	       21	       33	
+
+Sum of all matrix elements: 169
+
+
+-> Spectroscopic Term found:
+L=4, S=1 --- 3G  (M.E.= 27)
+
+-> Eliminating the 3G microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 4	        0	        0	        2	
+ML: 3	        1	        5	       10	
+ML: 2	        3	       12	       20	
+ML: 1	        4	       17	       28	
+ML: 0	        5	       20	       32	
+
+Sum of all matrix elements: 159
+
+
+-> Spectroscopic Term found:
+L=4, S=0 --- 1G  (M.E.= 9)
+
+-> Eliminating the 1G microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 4	        0	        0	        1	
+ML: 3	        1	        5	        9	
+ML: 2	        3	       12	       19	
+ML: 1	        4	       17	       27	
+ML: 0	        5	       20	       31	
+
+Sum of all matrix elements: 154
+
+
+-> Spectroscopic Term found:
+L=4, S=0 --- 1G  (M.E.= 9)
+
+-> Eliminating the 1G microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 3	        1	        5	        8	
+ML: 2	        3	       12	       18	
+ML: 1	        4	       17	       26	
+ML: 0	        5	       20	       30	
+
+Sum of all matrix elements: 149
+
+
+-> Spectroscopic Term found:
+L=3, S=2 --- 5F  (M.E.= 35)
+
+-> Eliminating the 5F microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 3	        0	        4	        7	
+ML: 2	        2	       11	       17	
+ML: 1	        3	       16	       25	
+ML: 0	        4	       19	       29	
+
+Sum of all matrix elements: 137
+
+
+-> Spectroscopic Term found:
+L=3, S=1 --- 3F  (M.E.= 21)
+
+-> Eliminating the 3F microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 3	        0	        3	        6	
+ML: 2	        2	       10	       16	
+ML: 1	        3	       15	       24	
+ML: 0	        4	       18	       28	
+
+Sum of all matrix elements: 129
+
+
+-> Spectroscopic Term found:
+L=3, S=1 --- 3F  (M.E.= 21)
+
+-> Eliminating the 3F microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 3	        0	        2	        5	
+ML: 2	        2	        9	       15	
+ML: 1	        3	       14	       23	
+ML: 0	        4	       17	       27	
+
+Sum of all matrix elements: 121
+
+
+-> Spectroscopic Term found:
+L=3, S=1 --- 3F  (M.E.= 21)
+
+-> Eliminating the 3F microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 3	        0	        1	        4	
+ML: 2	        2	        8	       14	
+ML: 1	        3	       13	       22	
+ML: 0	        4	       16	       26	
+
+Sum of all matrix elements: 113
+
+
+-> Spectroscopic Term found:
+L=3, S=1 --- 3F  (M.E.= 21)
+
+-> Eliminating the 3F microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 3	        0	        0	        3	
+ML: 2	        2	        7	       13	
+ML: 1	        3	       12	       21	
+ML: 0	        4	       15	       25	
+
+Sum of all matrix elements: 105
+
+
+-> Spectroscopic Term found:
+L=3, S=0 --- 1F  (M.E.= 7)
+
+-> Eliminating the 1F microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 3	        0	        0	        2	
+ML: 2	        2	        7	       12	
+ML: 1	        3	       12	       20	
+ML: 0	        4	       15	       24	
+
+Sum of all matrix elements: 101
+
+
+-> Spectroscopic Term found:
+L=3, S=0 --- 1F  (M.E.= 7)
+
+-> Eliminating the 1F microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 3	        0	        0	        1	
+ML: 2	        2	        7	       11	
+ML: 1	        3	       12	       19	
+ML: 0	        4	       15	       23	
+
+Sum of all matrix elements: 97
+
+
+-> Spectroscopic Term found:
+L=3, S=0 --- 1F  (M.E.= 7)
+
+-> Eliminating the 1F microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 2	        2	        7	       10	
+ML: 1	        3	       12	       18	
+ML: 0	        4	       15	       22	
+
+Sum of all matrix elements: 93
+
+
+-> Spectroscopic Term found:
+L=2, S=2 --- 5D  (M.E.= 25)
+
+-> Eliminating the 5D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 2	        1	        6	        9	
+ML: 1	        2	       11	       17	
+ML: 0	        3	       14	       21	
+
+Sum of all matrix elements: 84
+
+
+-> Spectroscopic Term found:
+L=2, S=2 --- 5D  (M.E.= 25)
+
+-> Eliminating the 5D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 2	        0	        5	        8	
+ML: 1	        1	       10	       16	
+ML: 0	        2	       13	       20	
+
+Sum of all matrix elements: 75
+
+
+-> Spectroscopic Term found:
+L=2, S=1 --- 3D  (M.E.= 15)
+
+-> Eliminating the 3D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 2	        0	        4	        7	
+ML: 1	        1	        9	       15	
+ML: 0	        2	       12	       19	
+
+Sum of all matrix elements: 69
+
+
+-> Spectroscopic Term found:
+L=2, S=1 --- 3D  (M.E.= 15)
+
+-> Eliminating the 3D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 2	        0	        3	        6	
+ML: 1	        1	        8	       14	
+ML: 0	        2	       11	       18	
+
+Sum of all matrix elements: 63
+
+
+-> Spectroscopic Term found:
+L=2, S=1 --- 3D  (M.E.= 15)
+
+-> Eliminating the 3D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 2	        0	        2	        5	
+ML: 1	        1	        7	       13	
+ML: 0	        2	       10	       17	
+
+Sum of all matrix elements: 57
+
+
+-> Spectroscopic Term found:
+L=2, S=1 --- 3D  (M.E.= 15)
+
+-> Eliminating the 3D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 2	        0	        1	        4	
+ML: 1	        1	        6	       12	
+ML: 0	        2	        9	       16	
+
+Sum of all matrix elements: 51
+
+
+-> Spectroscopic Term found:
+L=2, S=1 --- 3D  (M.E.= 15)
+
+-> Eliminating the 3D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 2	        0	        0	        3	
+ML: 1	        1	        5	       11	
+ML: 0	        2	        8	       15	
+
+Sum of all matrix elements: 45
+
+
+-> Spectroscopic Term found:
+L=2, S=0 --- 1D  (M.E.= 5)
+
+-> Eliminating the 1D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 2	        0	        0	        2	
+ML: 1	        1	        5	       10	
+ML: 0	        2	        8	       14	
+
+Sum of all matrix elements: 42
+
+
+-> Spectroscopic Term found:
+L=2, S=0 --- 1D  (M.E.= 5)
+
+-> Eliminating the 1D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 2	        0	        0	        1	
+ML: 1	        1	        5	        9	
+ML: 0	        2	        8	       13	
+
+Sum of all matrix elements: 39
+
+
+-> Spectroscopic Term found:
+L=2, S=0 --- 1D  (M.E.= 5)
+
+-> Eliminating the 1D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 1	        1	        5	        8	
+ML: 0	        2	        8	       12	
+
+Sum of all matrix elements: 36
+
+
+-> Spectroscopic Term found:
+L=1, S=2 --- 5P  (M.E.= 15)
+
+-> Eliminating the 5P microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 1	        0	        4	        7	
+ML: 0	        1	        7	       11	
+
+Sum of all matrix elements: 30
+
+
+-> Spectroscopic Term found:
+L=1, S=1 --- 3P  (M.E.= 9)
+
+-> Eliminating the 3P microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 1	        0	        3	        6	
+ML: 0	        1	        6	       10	
+
+Sum of all matrix elements: 26
+
+
+-> Spectroscopic Term found:
+L=1, S=1 --- 3P  (M.E.= 9)
+
+-> Eliminating the 3P microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 1	        0	        2	        5	
+ML: 0	        1	        5	        9	
+
+Sum of all matrix elements: 22
+
+
+-> Spectroscopic Term found:
+L=1, S=1 --- 3P  (M.E.= 9)
+
+-> Eliminating the 3P microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 1	        0	        1	        4	
+ML: 0	        1	        4	        8	
+
+Sum of all matrix elements: 18
+
+
+-> Spectroscopic Term found:
+L=1, S=1 --- 3P  (M.E.= 9)
+
+-> Eliminating the 3P microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 1	        0	        0	        3	
+ML: 0	        1	        3	        7	
+
+Sum of all matrix elements: 14
+
+
+-> Spectroscopic Term found:
+L=1, S=0 --- 1P  (M.E.= 3)
+
+-> Eliminating the 1P microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 1	        0	        0	        2	
+ML: 0	        1	        3	        6	
+
+Sum of all matrix elements: 12
+
+
+-> Spectroscopic Term found:
+L=1, S=0 --- 1P  (M.E.= 3)
+
+-> Eliminating the 1P microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 1	        0	        0	        1	
+ML: 0	        1	        3	        5	
+
+Sum of all matrix elements: 10
+
+
+-> Spectroscopic Term found:
+L=1, S=0 --- 1P  (M.E.= 3)
+
+-> Eliminating the 1P microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      2.0	      1.0	      0.0
+
+ML: 0	        1	        3	        4	
+
+Sum of all matrix elements: 8
+
+
+-> Spectroscopic Term found:
+L=0, S=2 --- 5S  (M.E.= 5)
+
+-> Eliminating the 5S microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.0	      0.0
+
+ML: 0	        2	        3	
+
+Sum of all matrix elements: 5
+
+
+-> Spectroscopic Term found:
+L=0, S=1 --- 3S  (M.E.= 3)
+
+-> Eliminating the 3S microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.0	      0.0
+
+ML: 0	        1	        2	
+
+Sum of all matrix elements: 3
+
+
+-> Spectroscopic Term found:
+L=0, S=1 --- 3S  (M.E.= 3)
+
+-> Eliminating the 3S microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      0.0
+
+ML: 0	        1	
+
+Sum of all matrix elements: 1
+
+
+-> Spectroscopic Term found:
+L=0, S=0 --- 1S  (M.E.= 1)
+
+-> Eliminating the 1S microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      0.0
+
+ML: 0	        0	
+
+Sum of all matrix elements: 0
+
+
+	**** ALL SPECTROCOPIC TERMS FOUND *****
+	Ordered according Hund's rule
+	Total amount of Terms: 38
+
+!->   5G     (M.E.=    45   |   N terms:  1       )
+!->   5F     (M.E.=    35   |   N terms:  1       )
+!->   5D     (M.E.=    25   |   N terms:  2       )
+!->   5P     (M.E.=    15   |   N terms:  1       )
+!->   5S     (M.E.=     5   |   N terms:  1       )
+!->   3H     (M.E.=    33   |   N terms:  1       )
+!->   3G     (M.E.=    27   |   N terms:  3       )
+!->   3F     (M.E.=    21   |   N terms:  4       )
+!->   3D     (M.E.=    15   |   N terms:  5       )
+!->   3P     (M.E.=     9   |   N terms:  4       )
+!->   3S     (M.E.=     3   |   N terms:  2       )
+!->   1H     (M.E.=    11   |   N terms:  1       )
+!->   1G     (M.E.=     9   |   N terms:  2       )
+!->   1F     (M.E.=     7   |   N terms:  3       )
+!->   1D     (M.E.=     5   |   N terms:  3       )
+!->   1P     (M.E.=     3   |   N terms:  3       )
+!->   1S     (M.E.=     1   |   N terms:  1       )
+
+	*** SPIN ORBIT COUPLING ***
+
+-> H(E-E): 5G (M.E.= 45)
+-> H(S-O): 5G6  5G5  5G4  5G3  5G2 
+
+-> H(E-E): 5F (M.E.= 35)
+-> H(S-O): 5F5  5F4  5F3  5F2  5F1 
+
+-> H(E-E): 5D (M.E.= 25)
+-> H(S-O): 5D4  5D3  5D2  5D1  5D0 
+
+-> H(E-E): 5P (M.E.= 15)
+-> H(S-O): 5P3  5P2  5P1 
+
+-> H(E-E): 5S (M.E.= 5)
+-> H(S-O): 5S2 
+
+-> H(E-E): 3H (M.E.= 33)
+-> H(S-O): 3H6  3H5  3H4 
+
+-> H(E-E): 3G (M.E.= 27)
+-> H(S-O): 3G5  3G4  3G3 
+
+-> H(E-E): 3F (M.E.= 21)
+-> H(S-O): 3F4  3F3  3F2 
+
+-> H(E-E): 3D (M.E.= 15)
+-> H(S-O): 3D3  3D2  3D1 
+
+-> H(E-E): 3P (M.E.= 9)
+-> H(S-O): 3P2  3P1  3P0 
+
+-> H(E-E): 3S (M.E.= 3)
+-> H(S-O): 3S1 
+
+-> H(E-E): 1H (M.E.= 11)
+-> H(S-O): 1H5 
+
+-> H(E-E): 1G (M.E.= 9)
+-> H(S-O): 1G4 
+
+-> H(E-E): 1F (M.E.= 7)
+-> H(S-O): 1F3 
+
+-> H(E-E): 1D (M.E.= 5)
+-> H(S-O): 1D2 
+
+-> H(E-E): 1P (M.E.= 3)
+-> H(S-O): 1P1 
+
+-> H(E-E): 1S (M.E.= 1)
+-> H(S-O): 1S0 
+
+
+
+	*** The obtension of all Spectroscopic Terms (Term Symbols) for configuration 'd2s1p1' ended normally!***
+
+Job completed!
+CPU time: 2685 ms 
+
+

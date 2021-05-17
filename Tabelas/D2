@@ -1,0 +1,13 @@
+# Character table for group D2
+#
+Classe 4
+#
+nelet   1     1        1        1
+#
+elem    E     C2(z)    C2(y)    C2(x)
+A1      1     1        1        1
+B1      1     1       -1       -1
+B2      1    -1        1       -1
+B3      1    -1       -1        1
+#
+Teta    0    180     180       180

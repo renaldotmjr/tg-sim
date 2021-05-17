@@ -1,0 +1,13 @@
+# Character table for group C2h 
+#
+Classe 4
+#
+nelet     1      1          1      1
+#
+elem      E      C2(z)      i      Sig_h
+Ag        1      1          1      1
+Bg        1     -1          1     -1
+Au        1      1         -1     -1
+Bu        1     -1         -1      1      
+#
+Teta      0     180         0     180

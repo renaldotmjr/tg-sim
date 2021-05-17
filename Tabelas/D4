@@ -1,0 +1,14 @@
+# Character table for group D4
+#
+Classe 5
+#
+nelet  1    2       1        2      2
+#
+elem   E    C4(z)   C2(z)    C2'    C2''
+A1     1    1       1        1      1
+A2     1    1       1       -1     -1
+B1     1   -1       1        1     -1
+B2     1   -1       1       -1      1
+E      2    0      -2        0      0
+#
+Teta   0    90     180      180    180

@@ -1,0 +1,14 @@
+# Character table for group Td
+#
+Classe 5
+#
+nelet   1     8      3      6      6
+#
+elem    E     C3     C2     S4     Sig_d
+A1      1     1      1      1      1
+A2      1     1      1     -1     -1
+E       2    -1      2      0      0
+T1      3     0     -1      1     -1
+T2      3     0     -1     -1      1
+#
+Teta    0    120    180    270    180

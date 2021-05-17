@@ -1,0 +1,13 @@
+# Character table for group C3h 
+#
+Classe 6
+#
+nelet   1    1        1       1        1     1
+#
+elem    E    C3(z)    C3^2    Sig_h    S3    S3^5
+A'      1    1        1       1        1     1
+E'      2   -1       -1       2       -1    -1
+A''     1    1        1      -1       -1    -1
+E''     2   -1       -1      -2        1     1    
+#
+Teta    0    120     240     180      300   60

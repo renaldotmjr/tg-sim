@@ -1,0 +1,239 @@
+#########################################################################
+##                                                                     ##
+##         TgSim Software                                              ##
+##         A Computational Tool for Electronic Spectroscopy            ##
+##                                                           2015      ##
+#########################################################################
+##                                                                     ##
+##     Universidade Federal de Pernambuco - UFPE                       ##
+##          Departamento de Quimica Fundamental - DQF                  ##
+##                                                                     ##
+##     Universidade Federal Rural de Pernambuco - UFRPE                ##
+##          Unidade Academica de Serra Talhada - UAST                  ##
+##                                                                     ##
+##               http://dqfnet.ufpe.br/lqtc/tgsim/                     ##
+##                                                                     ##
+## ------------------------------------------------------------------- ##
+##   Copyright (C) 2016  Renaldo T. Moura Jr.                          ##
+## This program comes with ABSOLUTELY NO WARRANTY.                     ##
+## This is free software, and you are welcome to redistribute it       ##
+## under certain conditions;                                           ##
+## Please, see http://www.gnu.org/licenses/ for details.               ##
+## ------------------------------------------------------------------- ##
+##                                                                     ##
+## -- PTE module --                                                    ##
+## Tg-Sim program aims the obtention of spectroscopic terms of a given ##
+## electronic configuration. The software constructs all microstates   ##
+## avoiding the violation of Pauli exclusion principle and using the   ##
+## aufbau principle.                                                   ##
+##                                                                     ##
+## By using a semimicrostates approach for the type of orbital (s, p,  ##
+## d, f,...) and the number of electrons, Tg-Sim returns the spectros- ##
+## copic terms including spin-orbit coupling and energetically ordered ##
+## by the Hund's rules.                                                ##
+##                                                                     ##
+## -- RTE module --                                                    ##
+## The package also computes the reducible representation of a chosen  ##
+## spectroscopic term in a symmetry field (symmetry point group), in a ##
+## linear combination of the irreducible ones.                         ##
+##                                                                     ##
+#########################################################################
+##  Renaldo T. Moura Jr.  | Eduardo C. Aguiar |  Julio C. S. da Silva  ##
+#########################################################################
+
+
+Number of microstates for configuration d^2: 45
+
+
+  *** Spin Factoring Like microstates ***  
+     ml (Spin UP)       ml (Spin Down)   
+[___ ___ ___ ___ ___|___ ___ ___ ___ ___]
+-------------------------------------------
+  2   1   0  -1  -2   2   1   0  -1  -2 
+
+  1   1   0   0   0   0   0   0   0   0      Ms =   2;    Ml =   3
+  1   0   1   0   0   0   0   0   0   0      Ms =   2;    Ml =   2
+  1   0   0   1   0   0   0   0   0   0      Ms =   2;    Ml =   1
+  1   0   0   0   1   0   0   0   0   0      Ms =   2;    Ml =   0
+  1   0   0   0   0   1   0   0   0   0      Ms =   0;    Ml =   4
+  1   0   0   0   0   0   1   0   0   0      Ms =   0;    Ml =   3
+  1   0   0   0   0   0   0   1   0   0      Ms =   0;    Ml =   2
+  1   0   0   0   0   0   0   0   1   0      Ms =   0;    Ml =   1
+  1   0   0   0   0   0   0   0   0   1      Ms =   0;    Ml =   0
+  0   1   1   0   0   0   0   0   0   0      Ms =   2;    Ml =   1
+  0   1   0   1   0   0   0   0   0   0      Ms =   2;    Ml =   0
+  0   1   0   0   1   0   0   0   0   0      Ms =   2;    Ml =  -1
+  0   1   0   0   0   1   0   0   0   0      Ms =   0;    Ml =   3
+  0   1   0   0   0   0   1   0   0   0      Ms =   0;    Ml =   2
+  0   1   0   0   0   0   0   1   0   0      Ms =   0;    Ml =   1
+  0   1   0   0   0   0   0   0   1   0      Ms =   0;    Ml =   0
+  0   1   0   0   0   0   0   0   0   1      Ms =   0;    Ml =  -1
+  0   0   1   1   0   0   0   0   0   0      Ms =   2;    Ml =  -1
+  0   0   1   0   1   0   0   0   0   0      Ms =   2;    Ml =  -2
+  0   0   1   0   0   1   0   0   0   0      Ms =   0;    Ml =   2
+  0   0   1   0   0   0   1   0   0   0      Ms =   0;    Ml =   1
+  0   0   1   0   0   0   0   1   0   0      Ms =   0;    Ml =   0
+  0   0   1   0   0   0   0   0   1   0      Ms =   0;    Ml =  -1
+  0   0   1   0   0   0   0   0   0   1      Ms =   0;    Ml =  -2
+  0   0   0   1   1   0   0   0   0   0      Ms =   2;    Ml =  -3
+  0   0   0   1   0   1   0   0   0   0      Ms =   0;    Ml =   1
+  0   0   0   1   0   0   1   0   0   0      Ms =   0;    Ml =   0
+  0   0   0   1   0   0   0   1   0   0      Ms =   0;    Ml =  -1
+  0   0   0   1   0   0   0   0   1   0      Ms =   0;    Ml =  -2
+  0   0   0   1   0   0   0   0   0   1      Ms =   0;    Ml =  -3
+  0   0   0   0   1   1   0   0   0   0      Ms =   0;    Ml =   0
+  0   0   0   0   1   0   1   0   0   0      Ms =   0;    Ml =  -1
+  0   0   0   0   1   0   0   1   0   0      Ms =   0;    Ml =  -2
+  0   0   0   0   1   0   0   0   1   0      Ms =   0;    Ml =  -3
+  0   0   0   0   1   0   0   0   0   1      Ms =   0;    Ml =  -4
+  0   0   0   0   0   1   1   0   0   0      Ms =  -2;    Ml =   3
+  0   0   0   0   0   1   0   1   0   0      Ms =  -2;    Ml =   2
+  0   0   0   0   0   1   0   0   1   0      Ms =  -2;    Ml =   1
+  0   0   0   0   0   1   0   0   0   1      Ms =  -2;    Ml =   0
+  0   0   0   0   0   0   1   1   0   0      Ms =  -2;    Ml =   1
+  0   0   0   0   0   0   1   0   1   0      Ms =  -2;    Ml =   0
+  0   0   0   0   0   0   1   0   0   1      Ms =  -2;    Ml =  -1
+  0   0   0   0   0   0   0   1   1   0      Ms =  -2;    Ml =  -1
+  0   0   0   0   0   0   0   1   0   1      Ms =  -2;    Ml =  -2
+  0   0   0   0   0   0   0   0   1   1      Ms =  -2;    Ml =  -3
+
+-> Grouping microstates into the answer matrix... (in terms of L and S) 
+
+
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.0	      0.0
+
+ML: 4	        0	        1	
+ML: 3	        1	        2	
+ML: 2	        1	        3	
+ML: 1	        2	        4	
+ML: 0	        2	        5	
+
+Sum of all matrix elements: 21
+
+
+
+-> Interpreting the Anwser Matrix to compute the Spectroscopic Terms (Terms Symbols)
+
+   *** Printing the Spectroscopic Terms of the electronic configuration ***
+
+
+
+-> Spectroscopic Term found:
+L=4, S=0 --- 1G  (M.E.= 9)
+
+-> Eliminating the 1G microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.0	      0.0
+
+ML: 3	        1	        1	
+ML: 2	        1	        2	
+ML: 1	        2	        3	
+ML: 0	        2	        4	
+
+Sum of all matrix elements: 16
+
+
+-> Spectroscopic Term found:
+L=3, S=1 --- 3F  (M.E.= 21)
+
+-> Eliminating the 3F microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.0	      0.0
+
+ML: 2	        0	        1	
+ML: 1	        1	        2	
+ML: 0	        1	        3	
+
+Sum of all matrix elements: 8
+
+
+-> Spectroscopic Term found:
+L=2, S=0 --- 1D  (M.E.= 5)
+
+-> Eliminating the 1D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.0	      0.0
+
+ML: 1	        1	        1	
+ML: 0	        1	        2	
+
+Sum of all matrix elements: 5
+
+
+-> Spectroscopic Term found:
+L=1, S=1 --- 3P  (M.E.= 9)
+
+-> Eliminating the 3P microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      0.0
+
+ML: 0	        1	
+
+Sum of all matrix elements: 1
+
+
+-> Spectroscopic Term found:
+L=0, S=0 --- 1S  (M.E.= 1)
+
+-> Eliminating the 1S microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      0.0
+
+ML: 0	        0	
+
+Sum of all matrix elements: 0
+
+
+	**** ALL SPECTROCOPIC TERMS FOUND *****
+	Ordered according Hund's rule
+	Total amount of Terms: 5
+
+!->   3F     (M.E.=    21   |   N terms:  1       )
+!->   3P     (M.E.=     9   |   N terms:  1       )
+!->   1G     (M.E.=     9   |   N terms:  1       )
+!->   1D     (M.E.=     5   |   N terms:  1       )
+!->   1S     (M.E.=     1   |   N terms:  1       )
+
+	*** SPIN ORBIT COUPLING ***
+
+-> H(E-E): 3F (M.E.= 21)
+-> H(S-O): 3F4  3F3  3F2 
+
+-> H(E-E): 3P (M.E.= 9)
+-> H(S-O): 3P2  3P1  3P0 
+
+-> H(E-E): 1G (M.E.= 9)
+-> H(S-O): 1G4 
+
+-> H(E-E): 1D (M.E.= 5)
+-> H(S-O): 1D2 
+
+-> H(E-E): 1S (M.E.= 1)
+-> H(S-O): 1S0 
+
+
+
+	*** The obtension of all Spectroscopic Terms (Term Symbols) for configuration 'd2' ended normally!***
+
+Job completed!
+Elapserd time: 0.000423 s 
+

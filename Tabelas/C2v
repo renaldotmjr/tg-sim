@@ -1,0 +1,13 @@
+# Character table for group C2v
+#
+Classe 4
+#
+nelet  1      1        1          1
+#
+elem   E    C2(z)   Sig_v(xz)   Sig_v(yz)
+A1     1      1        1          1
+A2     1      1       -1         -1
+B1     1     -1        1         -1
+B2     1     -1       -1          1
+#
+Teta   0     180      180        180        

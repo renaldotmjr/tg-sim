@@ -1,0 +1,11 @@
+# Character table for group C3v
+Classe 3
+#
+nelet   1    2        3
+#
+elem    E    C3(z)    Sig_v
+A1      1    1        1
+A2      1    1       -1
+E       2   -1        0
+#
+Teta    0   120      180

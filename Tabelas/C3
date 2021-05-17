@@ -1,0 +1,11 @@
+# Character table for group C3
+#
+Classe 3
+#
+nelet   1    1     1
+#
+elem    E    C3    C3^2
+A       1    1     1
+E       2   -2    -2
+#
+Teta    0   120   240

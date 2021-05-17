@@ -1,0 +1,369 @@
+#########################################################################
+##                                                                     ##
+##         TgSim Software                                              ##
+##         A Computational Tool for Electronic Spectroscopy            ##
+##                                                           2015      ##
+#########################################################################
+##                                                                     ##
+##     Universidade Federal de Pernambuco - UFPE                       ##
+##          Departamento de Quimica Fundamental - DQF                  ##
+##                                                                     ##
+##     Universidade Federal Rural de Pernambuco - UFRPE                ##
+##          Unidade Academica de Serra Talhada - UAST                  ##
+##                                                                     ##
+##               http://dqfnet.ufpe.br/lqtc/tgsim/                     ##
+##                                                                     ##
+## -- PTE module --                                                    ##
+## Tg-Sim program aims the obtention of spectroscopic terms of a given ##
+## electronic configuration. The software constructs all microstates   ##
+## avoiding the violation of Pauli exclusion principle and using the   ##
+## aufbau principle.                                                   ##
+##                                                                     ##
+## By using a semimicrostates approach for the type of orbital (s, p,  ##
+## d, f,...) and the number of electrons, Tg-Sim returns the spectros- ##
+## copic terms including spin-orbit coupling and energetically ordered ##
+## by the Hund's rules.                                                ##
+##                                                                     ##
+## -- RTE module --                                                    ##
+## The package also computes the reducible representation of a chosen  ##
+## spectroscopic term in a symmetry field (symmetry point group), in a ##
+## linear combination of the irreducible ones.                         ##
+##                                                                     ##
+#########################################################################
+##  Renaldo T. Moura Jr.  | Eduardo C. Aguiar |  Julio C. S. da Silva  ##
+#########################################################################
+
+
+Number of microstates for configuration d^3: 120
+
+
+  *** Spin Factoring Like microstates ***  
+[__ __ __]Ml(spinUP) [__ __ __]Ml(spinDOWN)
+-------------------------------------------
+  2   1   0  -1  -2   2   1   0  -1  -2 
+
+  1   1   1   0   0   0   0   0   0   0      Ms =   3;    Ml =   3
+  1   1   0   1   0   0   0   0   0   0      Ms =   3;    Ml =   2
+  1   1   0   0   1   0   0   0   0   0      Ms =   3;    Ml =   1
+  1   1   0   0   0   1   0   0   0   0      Ms =   1;    Ml =   5
+  1   1   0   0   0   0   1   0   0   0      Ms =   1;    Ml =   4
+  1   1   0   0   0   0   0   1   0   0      Ms =   1;    Ml =   3
+  1   1   0   0   0   0   0   0   1   0      Ms =   1;    Ml =   2
+  1   1   0   0   0   0   0   0   0   1      Ms =   1;    Ml =   1
+  1   0   1   1   0   0   0   0   0   0      Ms =   3;    Ml =   1
+  1   0   1   0   1   0   0   0   0   0      Ms =   3;    Ml =   0
+  1   0   1   0   0   1   0   0   0   0      Ms =   1;    Ml =   4
+  1   0   1   0   0   0   1   0   0   0      Ms =   1;    Ml =   3
+  1   0   1   0   0   0   0   1   0   0      Ms =   1;    Ml =   2
+  1   0   1   0   0   0   0   0   1   0      Ms =   1;    Ml =   1
+  1   0   1   0   0   0   0   0   0   1      Ms =   1;    Ml =   0
+  1   0   0   1   1   0   0   0   0   0      Ms =   3;    Ml =  -1
+  1   0   0   1   0   1   0   0   0   0      Ms =   1;    Ml =   3
+  1   0   0   1   0   0   1   0   0   0      Ms =   1;    Ml =   2
+  1   0   0   1   0   0   0   1   0   0      Ms =   1;    Ml =   1
+  1   0   0   1   0   0   0   0   1   0      Ms =   1;    Ml =   0
+  1   0   0   1   0   0   0   0   0   1      Ms =   1;    Ml =  -1
+  1   0   0   0   1   1   0   0   0   0      Ms =   1;    Ml =   2
+  1   0   0   0   1   0   1   0   0   0      Ms =   1;    Ml =   1
+  1   0   0   0   1   0   0   1   0   0      Ms =   1;    Ml =   0
+  1   0   0   0   1   0   0   0   1   0      Ms =   1;    Ml =  -1
+  1   0   0   0   1   0   0   0   0   1      Ms =   1;    Ml =  -2
+  1   0   0   0   0   1   1   0   0   0      Ms =  -1;    Ml =   5
+  1   0   0   0   0   1   0   1   0   0      Ms =  -1;    Ml =   4
+  1   0   0   0   0   1   0   0   1   0      Ms =  -1;    Ml =   3
+  1   0   0   0   0   1   0   0   0   1      Ms =  -1;    Ml =   2
+  1   0   0   0   0   0   1   1   0   0      Ms =  -1;    Ml =   3
+  1   0   0   0   0   0   1   0   1   0      Ms =  -1;    Ml =   2
+  1   0   0   0   0   0   1   0   0   1      Ms =  -1;    Ml =   1
+  1   0   0   0   0   0   0   1   1   0      Ms =  -1;    Ml =   1
+  1   0   0   0   0   0   0   1   0   1      Ms =  -1;    Ml =   0
+  1   0   0   0   0   0   0   0   1   1      Ms =  -1;    Ml =  -1
+  0   1   1   1   0   0   0   0   0   0      Ms =   3;    Ml =   0
+  0   1   1   0   1   0   0   0   0   0      Ms =   3;    Ml =  -1
+  0   1   1   0   0   1   0   0   0   0      Ms =   1;    Ml =   3
+  0   1   1   0   0   0   1   0   0   0      Ms =   1;    Ml =   2
+  0   1   1   0   0   0   0   1   0   0      Ms =   1;    Ml =   1
+  0   1   1   0   0   0   0   0   1   0      Ms =   1;    Ml =   0
+  0   1   1   0   0   0   0   0   0   1      Ms =   1;    Ml =  -1
+  0   1   0   1   1   0   0   0   0   0      Ms =   3;    Ml =  -2
+  0   1   0   1   0   1   0   0   0   0      Ms =   1;    Ml =   2
+  0   1   0   1   0   0   1   0   0   0      Ms =   1;    Ml =   1
+  0   1   0   1   0   0   0   1   0   0      Ms =   1;    Ml =   0
+  0   1   0   1   0   0   0   0   1   0      Ms =   1;    Ml =  -1
+  0   1   0   1   0   0   0   0   0   1      Ms =   1;    Ml =  -2
+  0   1   0   0   1   1   0   0   0   0      Ms =   1;    Ml =   1
+  0   1   0   0   1   0   1   0   0   0      Ms =   1;    Ml =   0
+  0   1   0   0   1   0   0   1   0   0      Ms =   1;    Ml =  -1
+  0   1   0   0   1   0   0   0   1   0      Ms =   1;    Ml =  -2
+  0   1   0   0   1   0   0   0   0   1      Ms =   1;    Ml =  -3
+  0   1   0   0   0   1   1   0   0   0      Ms =  -1;    Ml =   4
+  0   1   0   0   0   1   0   1   0   0      Ms =  -1;    Ml =   3
+  0   1   0   0   0   1   0   0   1   0      Ms =  -1;    Ml =   2
+  0   1   0   0   0   1   0   0   0   1      Ms =  -1;    Ml =   1
+  0   1   0   0   0   0   1   1   0   0      Ms =  -1;    Ml =   2
+  0   1   0   0   0   0   1   0   1   0      Ms =  -1;    Ml =   1
+  0   1   0   0   0   0   1   0   0   1      Ms =  -1;    Ml =   0
+  0   1   0   0   0   0   0   1   1   0      Ms =  -1;    Ml =   0
+  0   1   0   0   0   0   0   1   0   1      Ms =  -1;    Ml =  -1
+  0   1   0   0   0   0   0   0   1   1      Ms =  -1;    Ml =  -2
+  0   0   1   1   1   0   0   0   0   0      Ms =   3;    Ml =  -3
+  0   0   1   1   0   1   0   0   0   0      Ms =   1;    Ml =   1
+  0   0   1   1   0   0   1   0   0   0      Ms =   1;    Ml =   0
+  0   0   1   1   0   0   0   1   0   0      Ms =   1;    Ml =  -1
+  0   0   1   1   0   0   0   0   1   0      Ms =   1;    Ml =  -2
+  0   0   1   1   0   0   0   0   0   1      Ms =   1;    Ml =  -3
+  0   0   1   0   1   1   0   0   0   0      Ms =   1;    Ml =   0
+  0   0   1   0   1   0   1   0   0   0      Ms =   1;    Ml =  -1
+  0   0   1   0   1   0   0   1   0   0      Ms =   1;    Ml =  -2
+  0   0   1   0   1   0   0   0   1   0      Ms =   1;    Ml =  -3
+  0   0   1   0   1   0   0   0   0   1      Ms =   1;    Ml =  -4
+  0   0   1   0   0   1   1   0   0   0      Ms =  -1;    Ml =   3
+  0   0   1   0   0   1   0   1   0   0      Ms =  -1;    Ml =   2
+  0   0   1   0   0   1   0   0   1   0      Ms =  -1;    Ml =   1
+  0   0   1   0   0   1   0   0   0   1      Ms =  -1;    Ml =   0
+  0   0   1   0   0   0   1   1   0   0      Ms =  -1;    Ml =   1
+  0   0   1   0   0   0   1   0   1   0      Ms =  -1;    Ml =   0
+  0   0   1   0   0   0   1   0   0   1      Ms =  -1;    Ml =  -1
+  0   0   1   0   0   0   0   1   1   0      Ms =  -1;    Ml =  -1
+  0   0   1   0   0   0   0   1   0   1      Ms =  -1;    Ml =  -2
+  0   0   1   0   0   0   0   0   1   1      Ms =  -1;    Ml =  -3
+  0   0   0   1   1   1   0   0   0   0      Ms =   1;    Ml =  -1
+  0   0   0   1   1   0   1   0   0   0      Ms =   1;    Ml =  -2
+  0   0   0   1   1   0   0   1   0   0      Ms =   1;    Ml =  -3
+  0   0   0   1   1   0   0   0   1   0      Ms =   1;    Ml =  -4
+  0   0   0   1   1   0   0   0   0   1      Ms =   1;    Ml =  -5
+  0   0   0   1   0   1   1   0   0   0      Ms =  -1;    Ml =   2
+  0   0   0   1   0   1   0   1   0   0      Ms =  -1;    Ml =   1
+  0   0   0   1   0   1   0   0   1   0      Ms =  -1;    Ml =   0
+  0   0   0   1   0   1   0   0   0   1      Ms =  -1;    Ml =  -1
+  0   0   0   1   0   0   1   1   0   0      Ms =  -1;    Ml =   0
+  0   0   0   1   0   0   1   0   1   0      Ms =  -1;    Ml =  -1
+  0   0   0   1   0   0   1   0   0   1      Ms =  -1;    Ml =  -2
+  0   0   0   1   0   0   0   1   1   0      Ms =  -1;    Ml =  -2
+  0   0   0   1   0   0   0   1   0   1      Ms =  -1;    Ml =  -3
+  0   0   0   1   0   0   0   0   1   1      Ms =  -1;    Ml =  -4
+  0   0   0   0   1   1   1   0   0   0      Ms =  -1;    Ml =   1
+  0   0   0   0   1   1   0   1   0   0      Ms =  -1;    Ml =   0
+  0   0   0   0   1   1   0   0   1   0      Ms =  -1;    Ml =  -1
+  0   0   0   0   1   1   0   0   0   1      Ms =  -1;    Ml =  -2
+  0   0   0   0   1   0   1   1   0   0      Ms =  -1;    Ml =  -1
+  0   0   0   0   1   0   1   0   1   0      Ms =  -1;    Ml =  -2
+  0   0   0   0   1   0   1   0   0   1      Ms =  -1;    Ml =  -3
+  0   0   0   0   1   0   0   1   1   0      Ms =  -1;    Ml =  -3
+  0   0   0   0   1   0   0   1   0   1      Ms =  -1;    Ml =  -4
+  0   0   0   0   1   0   0   0   1   1      Ms =  -1;    Ml =  -5
+  0   0   0   0   0   1   1   1   0   0      Ms =  -3;    Ml =   3
+  0   0   0   0   0   1   1   0   1   0      Ms =  -3;    Ml =   2
+  0   0   0   0   0   1   1   0   0   1      Ms =  -3;    Ml =   1
+  0   0   0   0   0   1   0   1   1   0      Ms =  -3;    Ml =   1
+  0   0   0   0   0   1   0   1   0   1      Ms =  -3;    Ml =   0
+  0   0   0   0   0   1   0   0   1   1      Ms =  -3;    Ml =  -1
+  0   0   0   0   0   0   1   1   1   0      Ms =  -3;    Ml =   0
+  0   0   0   0   0   0   1   1   0   1      Ms =  -3;    Ml =  -1
+  0   0   0   0   0   0   1   0   1   1      Ms =  -3;    Ml =  -2
+  0   0   0   0   0   0   0   1   1   1      Ms =  -3;    Ml =  -3
+
+-> Grouping microstates into the answer matrix... (in terms of L and S) 
+
+
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.5	      0.5
+
+ML: 5	        0	        1	
+ML: 4	        0	        2	
+ML: 3	        1	        4	
+ML: 2	        1	        6	
+ML: 1	        2	        8	
+ML: 0	        2	        8	
+
+Sum of all matrix elements: 35
+
+
+
+-> Interpreting the Anwser Matrix to compute the Spectroscopic Terms (Terms Symbols)
+
+   *** Printing the Spectroscopic Terms of the electronic configuration ***
+
+
+
+-> Spectroscopic Term found:
+L=5, S=0.5 --- 2H  (M.E.= 22)
+
+-> Eliminating the 2H microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.5	      0.5
+
+ML: 4	        0	        1	
+ML: 3	        1	        3	
+ML: 2	        1	        5	
+ML: 1	        2	        7	
+ML: 0	        2	        7	
+
+Sum of all matrix elements: 29
+
+
+-> Spectroscopic Term found:
+L=4, S=0.5 --- 2G  (M.E.= 18)
+
+-> Eliminating the 2G microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.5	      0.5
+
+ML: 3	        1	        2	
+ML: 2	        1	        4	
+ML: 1	        2	        6	
+ML: 0	        2	        6	
+
+Sum of all matrix elements: 24
+
+
+-> Spectroscopic Term found:
+L=3, S=1.5 --- 4F  (M.E.= 28)
+
+-> Eliminating the 4F microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.5	      0.5
+
+ML: 3	        0	        1	
+ML: 2	        0	        3	
+ML: 1	        1	        5	
+ML: 0	        1	        5	
+
+Sum of all matrix elements: 16
+
+
+-> Spectroscopic Term found:
+L=3, S=0.5 --- 2F  (M.E.= 14)
+
+-> Eliminating the 2F microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.5	      0.5
+
+ML: 2	        0	        2	
+ML: 1	        1	        4	
+ML: 0	        1	        4	
+
+Sum of all matrix elements: 12
+
+
+-> Spectroscopic Term found:
+L=2, S=0.5 --- 2D  (M.E.= 10)
+
+-> Eliminating the 2D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.5	      0.5
+
+ML: 2	        0	        1	
+ML: 1	        1	        3	
+ML: 0	        1	        3	
+
+Sum of all matrix elements: 9
+
+
+-> Spectroscopic Term found:
+L=2, S=0.5 --- 2D  (M.E.= 10)
+
+-> Eliminating the 2D microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      1.5	      0.5
+
+ML: 1	        1	        2	
+ML: 0	        1	        2	
+
+Sum of all matrix elements: 6
+
+
+-> Spectroscopic Term found:
+L=1, S=1.5 --- 4P  (M.E.= 12)
+
+-> Eliminating the 4P microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      0.5
+
+ML: 1	        1	
+ML: 0	        1	
+
+Sum of all matrix elements: 2
+
+
+-> Spectroscopic Term found:
+L=1, S=0.5 --- 2P  (M.E.= 6)
+
+-> Eliminating the 2P microstates from Anwser Matrix.
+
+
+	*** Anwser Matrix - all microstates computed ***
+
+MS:	      0.0
+
+ML: 0	        0	
+
+Sum of all matrix elements: 0
+
+
+	**** ALL SPECTROCOPIC TERMS FOUND *****
+	Ordered according Hund's rule
+	Total amount of Terms: 8
+
+!->   4F     (M.E.=    28   |   N terms:  1       )
+!->   4P     (M.E.=    12   |   N terms:  1       )
+!->   2H     (M.E.=    22   |   N terms:  1       )
+!->   2G     (M.E.=    18   |   N terms:  1       )
+!->   2F     (M.E.=    14   |   N terms:  1       )
+!->   2D     (M.E.=    10   |   N terms:  2       )
+!->   2P     (M.E.=     6   |   N terms:  1       )
+
+	*** SPIN ORBIT COUPLING ***
+
+-> H(E-E): 4F (M.E.= 28)
+-> H(S-O): 4F4.5  4F3.5  4F2.5  4F1.5 
+
+-> H(E-E): 4P (M.E.= 12)
+-> H(S-O): 4P2.5  4P1.5  4P0.5 
+
+-> H(E-E): 2H (M.E.= 22)
+-> H(S-O): 2H5.5  2H4.5 
+
+-> H(E-E): 2G (M.E.= 18)
+-> H(S-O): 2G4.5  2G3.5 
+
+-> H(E-E): 2F (M.E.= 14)
+-> H(S-O): 2F3.5  2F2.5 
+
+-> H(E-E): 2D (M.E.= 10)
+-> H(S-O): 2D2.5  2D1.5 
+
+-> H(E-E): 2P (M.E.= 6)
+-> H(S-O): 2P1.5  2P0.5 
+
+
+
+	*** The obtension of all Spectroscopic Terms (Term Symbols) for configuration 'd3' ended normally!***
+
+Job completed!
+Elapserd time: 0.000648 s 
+

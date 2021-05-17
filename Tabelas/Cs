@@ -1,0 +1,11 @@
+# Character table for group Cs = Ch
+#
+Classe 2
+#
+nelet   1    1
+#
+elem    E    Sig_h
+A'      1    1
+A''     1   -1
+#
+Teta    0    180

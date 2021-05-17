@@ -1,0 +1,20 @@
+# Character table for group C6
+#
+Classe 6
+#
+nelet   1    1       1       1       1        1
+#
+elem    E    C6      C3      C2      C3^2     C6^5
+A       1    1       1       1       1        1
+B       1   -1       1      -1       1       -1
+E1      2    0.618  -1.618  -1.618   0.618
+E2      2   -1.618   0.618   0.618  -1.618
+#
+Teta
+
+
+
+
+
+
+

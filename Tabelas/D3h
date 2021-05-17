@@ -1,0 +1,15 @@
+# Character table for group D3h
+#
+Classe 6
+#
+nelet   1     2        3      1            2     3
+#
+elem    E     C3(z)    C2'    Sig_h(xy)    S3    Sig_v
+A'1     1     1        1      1            1     1
+A'2     1     1       -1      1            1    -1 
+E'      2    -1        0      2           -1     0
+A''1    1     1        1     -1           -1    -1
+A''2    1     1       -1     -1           -1     1
+E''     2    -1        0     -2            1     0
+#
+Teta    0    120      180    180          300   180

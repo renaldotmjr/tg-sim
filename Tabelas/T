@@ -1,0 +1,12 @@
+# Character table for group T
+#
+Classe 4
+#
+nelet   1     4      4       3
+#
+elem    E     C3     C3^2    C2
+A       1     1      1       1
+E       2    -1     -1       2
+T       3     0      0      -1
+#
+Teta    0    120    240     180

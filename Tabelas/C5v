@@ -1,0 +1,13 @@
+# Character table for group C5v
+#
+Classe 4
+#
+nelet   1    2       2       5
+#
+elem    E    C5      C5^2    Sig_v
+A1      1    1       1       1
+A2      1    1       1      -1
+E1      2    0.618  -1.618   0
+E2      2   -1.618   0.618   0
+#
+Teta    0    72      144     180

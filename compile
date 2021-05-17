@@ -1,0 +1,14 @@
+echo ""
+echo "##################################"
+echo "### TgSim Software Compilation ###"
+echo "##################################"
+echo ""
+echo "Compiling PTE module"
+echo "gcc -o PTE.OS.x PTE.c -lm"
+gcc -o PTE.OS.x PTE.c -lm
+echo "End of PTE module compilation"
+
+echo "Compiling RTE module"
+echo "gcc -o RTE.OS.x RTE.c -lm"
+gcc -o RTE.OS.x RTE.c -lm
+echo "End of RTE module compilation"

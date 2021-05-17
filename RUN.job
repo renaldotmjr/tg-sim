@@ -1,0 +1,32 @@
+./PTE.OS.x s1 0 0 >& s1.log
+./PTE.OS.x s2 0 0 >& s2.log
+
+./PTE.OS.x p1 0 0 >& p1.log
+./PTE.OS.x p2 0 0 >& p2.log
+./PTE.OS.x p3 0 0 >& p3.log
+./PTE.OS.x p4 0 0 >& p4.log
+./PTE.OS.x p5 0 0 >& p5.log
+
+./PTE.OS.x d1 0 0 >& d1.log
+./PTE.OS.x d2 0 0 >& d2.log
+./PTE.OS.x d3 0 0 >& d3.log
+./PTE.OS.x d4 0 0 >& d4.log
+./PTE.OS.x d5 0 0 >& d5.log
+./PTE.OS.x d6 0 0 >& d6.log
+./PTE.OS.x d7 0 0 >& d7.log
+./PTE.OS.x d8 0 0 >& d8.log
+./PTE.OS.x d9 0 0 >& d9.log
+
+./PTE.OS.x f1 0 0 >& f1.log
+./PTE.OS.x f2 0 0 >& f2.log
+./PTE.OS.x f3 0 0 >& f3.log
+./PTE.OS.x f4 0 0 >& f4.log
+./PTE.OS.x f5 0 0 >& f5.log
+./PTE.OS.x f6 0 0 >& f6.log
+./PTE.OS.x f7 0 0 >& f7.log
+./PTE.OS.x f8 0 0 >& f8.log
+./PTE.OS.x f9 0 0 >& f9.log
+./PTE.OS.x f10 0 0 >& f10.log
+./PTE.OS.x f11 0 0 >& f11.log
+./PTE.OS.x f12 0 0 >& f12.log
+./PTE.OS.x f13 0 0 >& f13.log

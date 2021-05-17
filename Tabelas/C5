@@ -1,0 +1,12 @@
+# Character table for group C5
+#
+Classe 5
+#
+nelet   1    1       1       1        1
+#
+elem    E    C5      C5^2    C5^3     C5^4  
+A       1    1       1       1        1 
+E1      2    0.618  -1.618  -1.618    0.618
+E2      2   -1.618   0.618   0.618   -1.618
+#
+Teta    0    72      144     216      288
